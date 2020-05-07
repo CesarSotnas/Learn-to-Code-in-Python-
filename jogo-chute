@@ -1,0 +1,13 @@
+# Jogo da adivinhação
+
+print("************************************")
+print("* Bem vindo ao jogo da adivinhação *")
+print("************************************")
+
+chute = int(input("Digite um número: "))
+adivinhacao = 2020
+
+if chute == adivinhacao:
+    print("Parabéns, você acertou o chute: ", chute)
+else:
+    print("Que pena, mais sorte na próxima. Seu chute foi ", chute, "mas o número era ", adivinhacao)
