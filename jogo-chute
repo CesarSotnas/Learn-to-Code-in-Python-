@@ -37,7 +37,7 @@ for cont in range(1, rodada):
         continue
 
     if igual:
-        print("Parabéns, você acertou!: ", adivinhacao)
+        print("Parabéns, você acertou! ", adivinhacao)
         break
 
     elif menor:
