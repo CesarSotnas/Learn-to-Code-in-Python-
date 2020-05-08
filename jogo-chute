@@ -1,13 +1,54 @@
 # Jogo da adivinhação
+import random
 
 print("************************************")
 print("* Bem vindo ao jogo da adivinhação *")
 print("************************************")
 
-chute = int(input("Digite um número: "))
-adivinhacao = 2020
+pontos = 1000
+adivinhacao = random.randrange(1, 101)
+total_tentativa = 3
 
-if chute == adivinhacao:
-    print("Parabéns, você acertou o chute: ", chute)
-else:
-    print("Que pena, mais sorte na próxima. Seu chute foi ", chute, "mas o número era ", adivinhacao)
+print("Escolha o nível: ")
+print(" (1) Fácil (2) Médio (3) Difícil")
+
+nivel = int(input("Nível: "))
+
+if nivel == 1:
+    rodada = 20
+
+elif nivel == 2:
+    rodada = 10
+
+elif nivel == 3:
+    rodada = 5
+
+
+for cont in range(1, rodada):
+    print("Total de tentativas: {} de {} ".format(cont, rodada))
+
+    chute = int(input("Digite um número: "))
+    igual = chute == adivinhacao
+    maior = chute > adivinhacao
+    menor = chute < adivinhacao
+
+    if chute < 1 or chute > 100:
+        print("O chute não pode ser menor que 1 e nem maior que 100")
+        continue
+
+    if igual:
+        print("Parabéns, você acertou!: ", adivinhacao)
+        break
+
+    elif menor:
+        print("Que pena. Seu chute foi menor: ")
+
+    else:
+        print("Que pena. Seu chute foi maior: ")
+
+    pontos_perdidos = abs(pontos - chute)
+    pontos = pontos_perdidos
+
+print("Pontuação: {}".format(pontos))
+print("O número era: {}".format(adivinhacao))
+print("Fim do jogo!")
