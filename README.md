@@ -1,3 +1,3 @@
 # Learn-to-Code-in-Python-
 
-Begginer at Python - Learning process
+Beginner at Python - Learning process
